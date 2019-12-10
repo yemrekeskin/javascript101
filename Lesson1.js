@@ -116,6 +116,149 @@ var bizimDizi = [["the universe",42],["everything",101010]];
 var bizimDizi2 = [];
 
 
+var fuck = [50,60,70];
+fuck[0]; // = 50
+var dam = fuck[1]; // = 60 
+
+var years = [111,222,333];
+years[0] = 444;
+
+
+var days = [
+    [1,2,3,4],
+    ["persembe"],
+    666,
+    [5,6,7],
+    [8]
+];
+var w = days[0];
+var x = days[3];
+
+
+// # .push = append data to the end of an array = add 
+var names = [1,2,3,4,5,6,7,8,9,0];
+names.push("one");
+names.push("two");
+names.push(3);
+
+// # .pop = removes the last element from an array and returns that element.
+// popped off
+var result = names.pop(); // equal to 3
+result = names.pop(); // equal to "two"
+
+
+// # That's where .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.
+// shifted off
+var ourLastNames = ["Stimpson","J", ["cat"]];
+var hello =  ourLastNames.shift(); // equal to "Stimpson";
+
+// # .unshift() = .pop()
+
+// # Write Reusable JavaScript with Functions
+function functionName() {
+    console.log("Hello World !");
+}
+
+functionName();
+
+function Result(param1, param2) {
+    console.log(param1,param2);
+}
+
+var grade1 = 0;
+var grade2 = 1;
+Result(grade1,grade2);
+
+
+// # GLobal Variables
+var myGlobal;
+var oppsGLobal;
+
+function fun1() {
+    
+}
+
+function fun2() {
+    var output;
+    if(typeof myGlobal != "undefined") {
+        output += "myGlobal:" + myGlobal;
+    }
+    if(typeof oppsGLobal != "undefined") {
+        output += "oppsGlobal:" + oppsGLobal;
+    }
+    console.log(output);
+}
+
+// # Local Variables
+
+function myTest() {
+   var loc = "foo";
+   console.log(loc);
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+
+
+// # return value
+function minusSeven(num) {
+    return num - 7;
+}
+var answer = minusSeven(45);
+
+// # Undefined Value returned from a Function
+var sum = 0;
+function sum(num) {
+    sum = sum + num;
+}
+sum(5); // sum  will be modified but returned value is undefined;
+
+
+var changed = 0;
+function change(num) {
+    return (num + 5) / 3;
+}
+changed = change(10);
+
+var testArr = [1,2,3];
+console.log(JSON.stringify(testArr));
+
+
+// # IF
+function myTest(isItTrue) {
+    if(isItTrue) {
+        return "Yes, it's true";
+    }
+    return "No, it's false";
+}
+
+function equalityTest(myVal) {
+    if(myVal == 10) {
+        return "Equal";
+    }
+    return "Not Equal";
+}
+
+// 1 == 1     TRUE
+// 1 == 2     FALSE
+// 1 == '1'   TRUE
+// "3" == 3   TRUE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
