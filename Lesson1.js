@@ -240,8 +240,160 @@ function equalityTest(myVal) {
 
 // 1 == 1     TRUE
 // 1 == 2     FALSE
-// 1 == '1'   TRUE
-// "3" == 3   TRUE
+// 1 == '1'   TRUE performs type conversion
+// "3" == 3   TRUE performs type conversion
+
+// # Equality operator == performs type conversion
+// # Strict Equality Operator ===  dont performs type conversion
+// type and value equality
+
+var isTrue = 5 === 3;
+
+typeof 3 // returns number
+typeof '3' // return string
+
+1 !=  2     // true
+1 != "1"    // false
+1 != '1'    // false
+1 != true   // false
+0 != false  // false
+
+// # Strict Inequality OperatorPassed
+
+3 !== 3   // false
+3 !== '3' // true
+4 !== 3   // true
+
+// #Greater Than Operator
+
+5   >  3   // true
+7   > '3'  // true
+2   >  3   // false
+'1' >  9   // false
+
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
+
+2   < 5  // true
+'3' < 7  // true
+5   < 5  // false
+3   < 2  // false
+'8' < 4  // false
+
+4   <= 5  // true
+'7' <= 7  // true
+5   <= 5  // true
+3   <= 2  // false
+'8' <= 4  // false 
+
+
+// AND Operators &&
+
+var result1;
+if (num > 5) {
+    if (num < 10) {
+        result1 = "Yes";
+    }
+}
+
+var result2;
+if (num > 5 && num < 10) {
+   result2 = "Yes";
+}
+result2 = "No";
+
+// OR Operators ||
+
+function name1(params) {
+    if (num > 10) {
+        return "No";
+    }
+    if (num < 5) {
+        return "No";
+    }
+    return "Yes";
+}
+
+function name2(params) {
+    if (num > 10 || num < 5) {
+      return "No";
+    }
+    return "Yes";
+}
+
+// IF
+// ELSE IF
+
+if (num > 15) {
+    return "Bigger than 15";
+} else if (num < 5) {
+    return "Smaller than 5";
+} else {
+    return "Between 5 and 15";
+}
+
+// Switch 1
+switch(lowercaseLetter) {
+    case "a":
+      console.log("A");
+      break;
+    case "b":
+      console.log("B");
+      break;
+}
+
+
+switch (num) {
+    case value1:
+      statement1;
+      break;
+    case value2:
+      statement2;
+      break;  
+    default: // default
+      defaultStatement;
+      break;
+  }
+
+
+
+  switch(val) {
+    case 1:
+    case 2:
+    case 3:
+      result = "1, 2, or 3";
+      break;
+    case 4:
+      result = "4 alone";
+  }
+
+  function isEqual(a,b) {
+    if (a === b) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+function isEqual(a,b) {
+    return a === b;
+}
+
+
+function myFun() {
+   console.log("Hello");
+   return "World";
+   console.log("byebye")
+}
+myFun();
+
+
+
+
+
+
 
 
 
