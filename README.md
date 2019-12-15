@@ -9,6 +9,12 @@
 - Javascript Algorithms and Data Structures
     - Basic Javascript
     - ES6 - EcmaScript
+        - Arrow functions
+        - Classes
+        - Modules
+        - Promises
+        - Generators
+        - let and const
     - Regular Expressions
     - Debugging
     - Basic Data Structures
