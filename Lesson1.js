@@ -429,27 +429,367 @@ var myDoberman = dogs[myDog];
 Console.log(myDoberman);
 
 
+var ourDog = {
+    "name":"Piti",
+    "legs":"4"
+};
+
+ourDog.name = "newValue";
+ourDog.bark = "bow-wow"; // new properties
+
+ourDog["newBark"] = "new-bow-wow";
+
+// delete new properties
+delete myDog.newBark;
+
+var alpha = {
+    1:"Z",
+    2:"Y",
+    3:"X",
+    4:"W",
+    24:"C",
+    25:"B",
+    26:"A"
+};
+alpha[2]; // "Y"
+alpha[24]; // "C"
+
+var value = 2;
+alpha[value]; // "Y"
+
+// # Testing Objects for Properties
+
+var myObject = {
+    top:"hat",
+    bottom:"pants"
+};
+
+myObject.hasOwnProperty("top");
+myObject.hasOwnProperty("middle"); // not exist
+
+// # Manipulating Complex Objects
+
+var ourMusic = [
+    {
+        "artist":"Draft Punk",
+        "title":"Home work",
+        "release_year":1887,
+        "formats": [ "CD","Casette","LP" ], // nested object
+        "gold":true
+    }
+]
 
 
+var ourStorage = {
+    "desk": {
+        "drawer":"stapler"
+    },
+    "cabinet": {
+        "top drawer": {
+            "folder1":"a file",
+            "folder2":"secret"
+        },
+        "bottom drawer": "soda"
+    }
+};
+
+ourStorage.cabinet["top drawer"].folder2; // secret
+ourStorage.desk.drawer; // stapler
 
 
+var ourPets = [
+    {
+        animalType:"cat",
+        names: [
+            "Meaozer",
+            "Fluffy",
+            "Deniz"
+        ]    
+    },
+    {
+        animalType:"dog",
+        names: [
+            "sports",
+            "Bowser",
+            "Frankie"
+        ]
+    }
+]
+
+ourPets[0].names[2] // Deniz
+ourPets[1].names[1] // Bowser
+
+// Setup
+var collection = {
+    2548: {
+      album: "Slippery When Wet",
+      artist: "Bon Jovi",
+      tracks: [
+        "Let It Rock",
+        "You Give Love a Bad Name"
+      ]
+    },
+    2468: {
+      album: "1999",
+      artist: "Prince",
+      tracks: [
+        "1999",
+        "Little Red Corvette"
+      ]
+    },
+    1245: {
+      artist: "Robert Palmer",
+      tracks: [ ]
+    },
+    5439: {
+      album: "ABBA Gold"
+    }
+  };
+  
+  // Only change code below this line
+  function updateRecords(id, prop, value) {
+    
+    if(value === "") delete collection[id][prop];
+    else if(prop === "tracks") {
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(value);
+      } else {
+        collection[id][prop] = value;
+      }
+
+  return collection;
+}
+  
+// Alter values below to test your code
+updateRecords(5439, "artist", "ABBA");
+
+// ARRAYS 
+
+// while : Iterate with JavaScript While Loops
+var ExArray = [];
+var i = 0;
+while (i < 5) {
+    ExArray.push(i);
+    i++;
+}
+
+// Sample
+var myArray = [];
+// Only change code below this line.
+var counter = 5
+while(counter >= 0) {
+    myArray.push(counter);
+    counter--;
+}
+
+// for
+var newArray = [];
+for (let index = 0; index <= 5; index++) {
+    newArray.push(index);    
+}
+
+var arr = [
+    [1,2], [3,4], [5,6]
+];
+
+for (var i=0; i < arr.length; i++) {
+    for (var j=0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+    }
+}
+
+// dow-while
+var ourArray = [];
+var i = 0;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
 
 
+// recursion
+function multiply(arr, n) {
+    var product = arr[0];
+    for (var i = 1; i <= n; i++) {
+        product *= arr[i];
+    }
+    return product;
+}
+
+// multiply(arr, n) == multiply(arr, n - 1) * arr[n]
+function multiply2(arr, n) {
+    if (n <= 0) {
+      return arr[0];
+    } else {
+      return multiply(arr, n - 1) * arr[n];
+    }
+  }
 
 
+// Sample : Profile Lookup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
 
 
+function lookUpProfile(name, prop){
+// Only change code below this line
+for (var i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      if (prop in contacts[i]) {
+        return contacts[i][prop];
+      } else return "No such property";
+    }
+  }
+  return "No such contact";
+// Only change code above this line
+}
+
+function lookUpProfile2(name, prop) {
+    for (var x = 0; x < contacts.length; x++) {
+        if (contacts[x].firstName === name) {
+            if (contacts[x].hasOwnProperty(prop)) {
+                return contacts[x][prop];
+            } else {
+                return "No such property";
+            }
+        }
+    }
+    return "No such contact";
+}
 
 
+// if (contacts[x].hasOwnProperty(prop))  == if (prop in contacts[i])
+
+// Change these values to test your function
+lookUpProfile("Akira", "likes");
+
+// Random
+
+function ourRandomRange(ourMin, ourMax) {
+   return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}  
+ourRandomRange(1, 9);
 
 
+function convertToInteger(str) {
+    return parseInt(str);
+}
+convertToInteger("56");
+
+// The radix can be an integer between 2 and 36.
+// parseInt(string, radix); 
+// The radix can be an integer between 2 and 36.
+
+function convertToInteger2(str) {
+    return parseInt(str,2);
+}
+
+convertToInteger2("10011");
+
+// # Use the Conditional (Ternary) Operator
+// condition ? statement-if-true : statement-if-false;
+
+function findGreater(a, b) {
+    if(a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+};
+
+function findGreater2(a, b) {
+    return a > b ? "a is greater" : "b is greater";
+}
+
+function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    }
+    else if (a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+
+function findGreaterOrEqual2(a, b) {
+    return (a === b) ? "a and b are equal" 
+        : (a > b) ? "a is greater" 
+        : "b is greater";
+}
+
+function findGreaterOrEqual3(a, b) {
+   return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
 
 
+// Samples
+
+function countup(n) {
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
+}
+console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 
 
+//Only change code below this line
+function countdown(n){
+    if(n < 1) {
+      return [];
+    }
+    else {
+      const arr = countdown(n - 1);
+      arr.unshift(n);
+      return arr;
+    }  
+}
+console.log(countdown(5)); // [5, 4, 3, 2, 1]
 
 
+// Sample
 
+function rangeOfNumbers(startNum, endNum) {
+
+    if (endNum - startNum === 0) {
+        return [startNum];
+      } else {
+        var numbers = rangeOfNumbers(startNum, endNum - 1);
+        numbers.push(endNum);
+        return numbers;
+      }
+};
+  
 
 
 
