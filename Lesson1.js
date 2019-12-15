@@ -390,6 +390,45 @@ function myFun() {
 myFun();
 
 
+// # Objects
+
+var cat = {
+    "name":"Whisker",
+    "legs":4,
+    "tails":1,
+    "enemies":["water","dog"]
+};
+
+var anotherExample = {
+    make:"makname",
+    3:"test",
+    "model":"focus"
+};
+
+var myObj = {
+    prop1:"val1",
+    prop2:"val2",
+    "Space Name":"Kirk",
+    "More Space":"Spock"
+};
+
+var prop1val = myObj.prop1;
+var prop2val = myObj.prop2;
+var prop3val = myObj["Space Name"];
+var prop4val = myObj["More Space"];
+
+var dogs = {
+    Fido:"Mutt",
+    Hunter:"Doberman",
+    Snope:"Beagle"
+};
+
+
+var myDog = "Hunter";
+var myDoberman = dogs[myDog];
+Console.log(myDoberman);
+
+
 
 
 
