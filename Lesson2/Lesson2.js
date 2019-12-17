@@ -265,6 +265,89 @@ console.log(greetingNew); // prints
 
 // # ES6: Write Concise Object Literal Declarations Using Object Property Shorthand
 
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+console.log(getMousePosition());
+
+
+const getMousePositionNew = (x, y) => ({ x, y });
+console.log(getMousePositionNew());
+
+// # ES6: Write Concise Declarative Functions with ES6
+
+
+const personOld = {
+  name: "Emre",
+  sayHello: function () {
+    return `Hello! My name is ${ this.name} `;
+  }
+};
+
+const personNew = {
+  name: "Yunus Emre",
+  sayHello() {
+    return `Hello! My name is ${ this.name} `;
+  }
+};
+
+// # ES6: Use class Syntax to Define a Constructor Function
+
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+
+class SpaceShuttleNew {
+  
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+
+var zeud = new SpaceShuttleNew("Jupiter");
+
+
+// # ES6: Use getters and setters to Control Access to an Object
+
+class Book {
+
+  constructor(author) {
+    this._author = author;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  set author(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+
+const lol = new Book('anonymous');
+console.log(lol.author);
+
+lol.setAuthor = 'updated anonymous';
+console.log(lol.author);
+
+
+// class Thermostat {
+//   constructor(fahrenheit) {
+//     this.fahrenheit = fahrenheit;
+//   }
+  
+//   get temperature() {
+//     return (5 / 9) * (this.fahrenheit - 32);
+//   }
+  
+//   set temperature(celsius) {
+//     this.fahrenheit = (celsius * 9.0) / 5 + 32;
+//   }
+// }
+
 
 
 
