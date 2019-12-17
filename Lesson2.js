@@ -141,12 +141,129 @@ const newsum = (...args) => {
 
 // Spread Operator ...arr
 
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89
+var min = Math.min.apply(null,arr);
+console.log(maximus);
+console.log(min);
+
+var maximusVal = Math.max(arr);
+console.log(maximusVal);
+
+var newMaximus = Math.max(...arr); // spread array
+console.log("NewMaximus - > " + newMaximus);
+
+// another way to find min or max in an array
+// arr.min();
+// arr.max();
+
+
+function myFunction(x, y, z) { return x+y+z; }
+var args = [0, 1, 2];
+var result1 = myFunction.apply(null, args); 
+console.log(result1);
+
+// yerine 
+
+var result2 = myFunction(...args);
+console.log(result2);
+
+var parts = ['shoulders', 'knees'];
+var lyrics = ['head', ...parts, 'and', 'toes']; // ["head", "shoulders", "knees", "and", "toes"]
+
+// copy array
+var arr = [1, 2, 3];
+var arr2 = [...arr]; // like arr.slice()
+arr2.push(4);
+
+// remove duplicate items and return new array
+const array = [1,2,2,3,5];
+let newArray = [...new Set(arr)];
+console.log(newArray);
+
+
+// # ES6: Use Destructuring Assignment to Extract Values from Objects
+
+const user = { name: 'John Doe', age: 34 };
+
+const name1 = user.name; // name = 'John Doe'
+const age1 = user.age; // age = 34
+
+const { name, age } = user;
+// name = 'John Doe', age = 34
 
 
 
+// # ES6: Use Destructuring Assignment to Assign Variables from Nested Objects
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// change code below this line
+
+const { today: { low:lowToday, high:highToday  }} = LOCAL_FORECAST;
+
+// change code above this line
+
+console.log(lowToday); // should be 64
+console.log(highToday); // should be 77
+
+// # ES6: Use Destructuring Assignment to Assign Variables from Arrays
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+
+const [x1, x2,,, x3] = [1, 2, 3, 4, 5, 6];
+console.log(x1, x2, x3); // 1, 2, 5
 
 
+// Example
+let d = 8, k = 6; 
+// change code below this line
 
+[d,k] = [k,d];
+
+// change code above this line
+console.log(d); // should be 6
+console.log(k); // should be 8
+
+// # ES6: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+
+const [r, t, ...arrX] = [1, 2, 3, 4, 5, 7];
+console.log(r, t); // 1, 2
+console.log(arrX); // [3, 4, 5, 7]
+
+// # ES6: Use Destructuring Assignment to Pass an Object as a Function's Parameters
+
+const profileUpdate = (data) => {
+  const { name, age, nationality, location } = data; 
+}
+
+const profileUpdateOfIt = ({ name, age, nationality, location }) => {
+   /* do something with these  fields */
+}
+
+// # ES6: Create Strings using Template Literals
+// ${ .... }
+
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greetingNew = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greetingNew); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+
+// # ES6: Write Concise Object Literal Declarations Using Object Property Shorthand
 
 
 
