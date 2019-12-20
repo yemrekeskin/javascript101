@@ -31,6 +31,7 @@
 
 ## Useful Links 💥
 - [https://www.freecodecamp.org/learn/](https://www.freecodecamp.org/learn/)
+- [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/)
 
 ## Contribution 💪
 Pull requests are welcome, but make sure you sign the Contributor License Agreement.
