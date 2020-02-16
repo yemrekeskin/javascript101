@@ -19,5 +19,17 @@ const reverseFn2 = (str) => {
     return reversed;
 }
 
-console.log(reverseFn2('yunusemrekeskin'));
+function reverseString(str) {
+    var final = "";
+    for (let index = str.length - 1; index >= 0; index--) {
+        const element = str[index];
+        // console.log(element);
+        final += element;
+    }
+    return final;
+}
+
+console.log(reverseString('hello'));
+
+// console.log(reverseFn2('yunusemrekeskin'));
 
